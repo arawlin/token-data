@@ -1,0 +1,29 @@
+{
+  "name": "token-data-workspace",
+  "version": "1.0.0",
+  "description": "TypeScript monorepo workspace for token data",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "tsc --build",
+    "clean": "rimraf packages/*/dist",
+    "dev": "npm run dev --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "typecheck": "tsc --build --noEmit",
+    "install:all": "npm install && npm install --workspaces"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0",
+    "ts-node": "^10.9.2",
+    "rimraf": "^6.0.0",
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  }
+}
